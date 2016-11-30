@@ -1,0 +1,1 @@
+Checkout price of item
