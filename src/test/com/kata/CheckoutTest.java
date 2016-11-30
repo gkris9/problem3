@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.com.kata.Checkout;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import junit.framework.TestCase;
@@ -13,7 +14,7 @@ public class CheckoutTest extends TestCase {
 	public void price_of_one_item_two_Quantity() {
 
 		Checkout checkoutItem = new Checkout();
-		assertFalse(checkoutItem.getTotalPriceByItemAndQuantity("A", 1, 50) == 0);
+		assertEquals(checkoutItem.getTotalPriceByItemAndQuantity("A", 1, 50) == 0);
 	}
 	
 	@Test
