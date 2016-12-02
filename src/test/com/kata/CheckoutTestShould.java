@@ -42,5 +42,35 @@ public class CheckoutTestShould extends TestCase {
 		assertEquals(70, checkoutCalculator.calculateAllItems(listOfItemCode, productName));
 
 	}
+	
+	@Test
+	public void return_amount_80_for_productA() {
+
+		String productName = "A";
+		Checkout checkoutCalculator = new Checkout();
+		List<String> listOfItemCode = Arrays.asList("A","A");
+		assertEquals(80, checkoutCalculator.calculateAllItems(listOfItemCode, productName));
+
+	}
+	
+	@Test
+	public void return_amount_60_for_productA() {
+
+		String productName = "B";
+		Checkout checkoutCalculator = new Checkout();
+		List<String> listOfItemCode = Arrays.asList("B","B");
+		assertEquals(60, checkoutCalculator.calculateAllItems(listOfItemCode, productName));
+
+	}
+	
+	@Test
+	public void return_amount_180_for_productA() {
+
+		String productName = "C";
+		Checkout checkoutCalculator = new Checkout();
+		List<String> listOfItemCode = Arrays.asList("C","C","C");
+		assertEquals(180, checkoutCalculator.calculateAllItems(listOfItemCode, productName));
+
+	}
 
 }
