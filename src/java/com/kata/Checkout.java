@@ -1,14 +1,43 @@
 package java.com.kata;
 
-public class Checkout {
-	public int getTotalPriceByItemAndQuantity(String product, int Quantity, int price) {
+import java.util.HashMap;
+import java.util.List;
 
-		Integer productPrice = 0;
-		if (product.equals("A") || product.equals("B")) {
-			return productPrice = Quantity * price;
+public class Checkout {
+
+	private HashMap<String, Integer> productPrice = new HashMap<String, Integer>();
+
+	public Checkout() {
+		productPrice.put("A", 50);
+		productPrice.put("B", 30);
+		productPrice.put("C", 70);
+	}
+
+	public int getProduct(String productName) {
+		return productPrice.get(productName);
+	}
+
+	public int calculateAllItems(List<String> productTotalPrice, String productName) {
+		int totalPrice = 0;
+		for (String product : productTotalPrice) {
+			totalPrice += getProduct(product);
+
 		}
 
-		return productPrice;
+		int productCount = 0;
+		for (String product : productTotalPrice) {
+			if (product.equals(productName)) {
+				productCount++;
+			}
+			if (productCount == 1) {
+				totalPrice = (getProduct(productName));
+			}
+			if (productCount >= 2) {
+				totalPrice = totalPrice + ((getProduct(productName) * productCount) - (10 * productCount));
+			}
+		}
+
+		return totalPrice;
 	}
 
 }
