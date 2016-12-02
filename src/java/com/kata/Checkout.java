@@ -13,7 +13,7 @@ public class Checkout {
 		productPrice.put("C", 70);
 	}
 
-	public int getProduct(String productName) {
+	private int getProduct(String productName) {
 		return productPrice.get(productName);
 	}
 
